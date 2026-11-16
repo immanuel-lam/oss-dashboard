@@ -1,0 +1,23 @@
+// Base Worker configuration. `npm run setup:cloudflare` copies this into wrangler.production.json (git-ignored)
+// and adds your D1 database ID and optional custom domain. `npm run dev` uses wrangler.local.json.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "oss-dashboard",
+  "main": "src/worker.ts",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
+  "triggers": {
+    "crons": ["*/15 * * * *", "30 5 * * *"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "oss-dashboard",
+      "migrations_dir": "migrations"
+    }
+  ]
+}

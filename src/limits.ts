@@ -1,0 +1,7 @@
+export async function boundedBytes(stream:ReadableStream<Uint8Array>,limit:number){const reader=stream.getReader();let size=0;const chunks:Uint8Array[]=[];while(true){const {done,value}=await reader.read();if(done)break;size+=value.byteLength;if(size>limit){await reader.cancel();throw Error('Report exceeds size limit.');}chunks.push(value);}const result=new Uint8Array(size);let offset=0;for(const chunk of chunks){result.set(chunk,offset);offset+=chunk.length;}return result;}
+export const LOCK_MS=900000;
+/** Takes the per-source lock and returns its release function, or null when another sync holds it. */
+export async function acquireLock(db:D1Database,source:string){const now=Date.now();const lock=await db.prepare('INSERT INTO sync_locks(source,expires) VALUES(?,?) ON CONFLICT(source) DO UPDATE SET expires=excluded.expires WHERE sync_locks.expires<? RETURNING source').bind(source,now+LOCK_MS,now).first();return lock?()=>db.prepare('DELETE FROM sync_locks WHERE source=? AND expires=?').bind(source,now+LOCK_MS).run():null;}
+export async function withLock<T>(db:D1Database,source:string,fn:()=>Promise<T>){const release=await acquireLock(db,source);if(!release)throw Error('Sync already running.');try{return await fn();}finally{await release();}}
+/** A run still marked running after the lock window was cut off (for example, the browser disconnected before waitUntil existed). */
+export const staleRunsSql="UPDATE sync_runs SET status='error',finished_at=?,message='Sync stopped before it finished. Run it again.' WHERE status='running' AND started_at<?";

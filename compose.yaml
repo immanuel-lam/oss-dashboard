@@ -1,0 +1,15 @@
+# docker compose up -d
+# Settings: copy .env.example to .env and fill in what you use. Data and the generated encryption key live in ./data.
+services:
+  dashboard:
+    build: .
+    restart: unless-stopped
+    env_file:
+      - path: .env
+        required: false
+    ports:
+      # Bound to localhost on purpose: there is no built-in sign-in. Put a VPN (e.g. Tailscale) or an
+      # authenticating reverse proxy in front before exposing it. See README.md → "Protect it".
+      - "127.0.0.1:8787:8787"
+    volumes:
+      - ./data:/data

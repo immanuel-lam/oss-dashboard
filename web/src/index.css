@@ -1,0 +1,153 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* Dark is the default theme; light is opt-in through the .light class on <html>. Change colours here only:
+   components read these tokens, never literal colours. */
+@custom-variant dark (&:where(:root:not(.light), :root:not(.light) *));
+@custom-variant light (&:where(.light, .light *));
+
+@font-face { font-family: Manrope; src: url('/fonts/manrope.woff2') format('woff2'); font-weight: 200 800; font-display: swap; }
+@font-face { font-family: Hanken; src: url('/fonts/hanken.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }
+
+/* Theme tokens mapped onto shadcn's variable names. */
+:root {
+  color-scheme: dark;
+  --radius: 0.75rem;
+  --shell: #0f1115;
+  --background: #15171c;
+  --foreground: #e8eaf0;
+  --card: #1b1e24;
+  --card-foreground: #e8eaf0;
+  --popover: #22252c;
+  --popover-foreground: #e8eaf0;
+  --primary: #7c9cff;
+  --primary-foreground: #0b1020;
+  --secondary: #252932;
+  --secondary-foreground: #e8eaf0;
+  --muted: #252932;
+  --muted-foreground: #8b919e;
+  --accent: #282c35;
+  --accent-foreground: #e8eaf0;
+  --destructive: #ff8a80;
+  --border: #2a2e37;
+  --input: #353a45;
+  --ring: #7c9cff;
+  --up: #7fd1a6;
+  --down: #ff8a80;
+  --warn: #f2c25b;
+  --chart-1: #7c9cff;
+  --chart-2: #8b919e;
+  --sidebar: #0f1115;
+  --sidebar-foreground: #e8eaf0;
+  --sidebar-accent: #22252c;
+  --shadow-card: 0 1px 0 rgba(255,255,255,.04) inset, 0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+}
+.light {
+  color-scheme: light;
+  --shell: #eceef2;
+  --background: #f6f7f9;
+  --foreground: #1f2329;
+  --card: #ffffff;
+  --card-foreground: #1f2329;
+  --popover: #ffffff;
+  --popover-foreground: #1f2329;
+  --primary: #2f5bd3;
+  --primary-foreground: #ffffff;
+  --secondary: #eef0f4;
+  --secondary-foreground: #1f2329;
+  --muted: #eef0f4;
+  --muted-foreground: #646b78;
+  --accent: #eff1f5;
+  --accent-foreground: #1f2329;
+  --destructive: #b3261e;
+  --border: #dfe2e8;
+  --input: #d3d7df;
+  --ring: #2f5bd3;
+  --up: #2c7a52;
+  --down: #b3261e;
+  --warn: #8a6100;
+  --chart-1: #2f5bd3;
+  --chart-2: #868c98;
+  --sidebar: #eceef2;
+  --sidebar-foreground: #1f2329;
+  --sidebar-accent: #ffffff;
+  --shadow-card: 0 1px 2px rgba(25,30,40,.06), 0 8px 24px -14px rgba(25,30,40,.18);
+}
+
+@theme inline {
+  --font-sans: Hanken, ui-sans-serif, system-ui, sans-serif;
+  --font-display: Manrope, ui-sans-serif, system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-shell: var(--shell);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-up: var(--up);
+  --color-down: var(--down);
+  --color-warn: var(--warn);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --shadow-card: var(--shadow-card);
+}
+
+@layer base {
+  * { @apply border-border outline-ring/50; }
+  html, body { @apply bg-shell text-foreground; }
+  body { font-family: var(--font-sans); -webkit-font-smoothing: antialiased; font-size: 14px; }
+  h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.03em; }
+}
+
+.tabular { font-variant-numeric: tabular-nums; }
+/* Cursor-following highlight on interactive tiles. */
+.spotlight { position: relative; isolation: isolate; }
+.spotlight::before { content: ''; position: absolute; inset: 0; z-index: -1; border-radius: inherit; opacity: 0; transition: opacity .3s; background: radial-gradient(360px circle at var(--mx, 50%) var(--my, 0%), color-mix(in srgb, var(--primary) 12%, transparent), transparent 60%); }
+.spotlight:hover::before { opacity: 1; }
+@keyframes shimmer { to { background-position: -150% 0; } }
+.shimmer { background: linear-gradient(100deg, var(--card) 30%, var(--accent) 50%, var(--card) 70%) 0 0 / 300% 100%; animation: shimmer 1.4s linear infinite; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+/* Liquid-glass phone tab bar: translucent capsule, specular rim and a lens that magnifies the selected tab. */
+.glass-bar {
+  background: color-mix(in srgb, var(--popover) 66%, transparent);
+  backdrop-filter: blur(28px) saturate(190%) brightness(1.04);
+  -webkit-backdrop-filter: blur(28px) saturate(190%) brightness(1.04);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.22),
+    inset 0 -1px 0 rgba(0,0,0,.18),
+    inset 0 0 0 1px rgba(255,255,255,.08),
+    0 18px 40px -14px rgba(0,0,0,.55),
+    0 2px 8px -2px rgba(0,0,0,.25);
+}
+.glass-bar::before { content:''; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+  background: linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,0) 42%, rgba(255,255,255,0) 70%, rgba(255,255,255,.06)); }
+.light .glass-bar { background: color-mix(in srgb, #ffffff 70%, transparent);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.9), inset 0 0 0 1px rgba(25,30,40,.08), 0 18px 40px -16px rgba(25,30,40,.35), 0 2px 8px -2px rgba(25,30,40,.12); }
+.glass-lens { left:0; z-index:1; pointer-events:none;
+  background: radial-gradient(120% 90% at var(--glare,50%) 0%, rgba(255,255,255,.28), rgba(255,255,255,.06) 55%, rgba(255,255,255,.02)),
+    color-mix(in srgb, var(--foreground) 9%, transparent);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.35), inset 0 -1px 1px rgba(0,0,0,.12), inset 0 0 0 1px rgba(255,255,255,.12), 0 6px 18px -8px rgba(0,0,0,.45);
+  backdrop-filter: blur(6px) saturate(160%) contrast(1.05); -webkit-backdrop-filter: blur(6px) saturate(160%) contrast(1.05); }
+.light .glass-lens { background: radial-gradient(120% 90% at var(--glare,50%) 0%, rgba(255,255,255,.95), rgba(255,255,255,.55) 60%), rgba(255,255,255,.4);
+  box-shadow: inset 0 1px 0 #fff, inset 0 0 0 1px rgba(25,30,40,.06), 0 6px 16px -8px rgba(25,30,40,.35); }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) { .glass-bar { background: var(--popover); } }

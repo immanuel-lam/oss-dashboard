@@ -1,0 +1,12 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {parseDownloads} from '../src/apple-analytics.ts';
+import {boundedBytes} from '../src/limits.ts';
+test('downloads sum report dimensions without mixing download types',()=>{const r=parseDownloads('Date\tDownload Type\tCounts\n2026-10-01\tFirst-time download\t2\n2026-10-01\tFirst-time download\t3\n2026-10-01\tRedownload\t4');assert.deepEqual(r.map(x=>x.value),[5,4]);});
+test('unrecognised Apple report semantics fail instead of silently undercounting',()=>assert.throws(()=>parseDownloads('Date\tDownload Type\tCounts\n2026-10-01\tUnknown\t9')));
+test('download limits reject streamed overflow',async()=>{const s=new ReadableStream({start(c){c.enqueue(new Uint8Array(10));c.close();}});await assert.rejects(()=>boundedBytes(s,5));});
+test('Apple download types match the documented values case-insensitively, including Restore',async()=>{const {parseDownloads}=await import('../src/apple-analytics.ts');const r=parseDownloads('Date\tDownload Type\tCounts\n2026-10-29\tFirst-time Download\t24\n2026-10-29\tRedownload\t2\n2026-10-29\tAuto-update\t5\n2026-10-29\tManual update\t1\n2026-10-29\tRestore\t3');assert.deepEqual(r.map(x=>[x.metric,x.value]),[['first_downloads',24],['redownloads',2],['automatic_updates',5],['manual_updates',1],['restores',3]]);});
+test('Apple reads the Standard downloads report by its API name',async()=>{const {DOWNLOAD_REPORTS}=await import('../src/apple-analytics.ts');assert.equal(DOWNLOAD_REPORTS[0],'App Downloads Standard');assert.ok(!DOWNLOAD_REPORTS.includes('App Downloads Detailed'));});
+test('Apple refreshes the newest instances and backfills unstored dates within the run cap',async()=>{const {pickInstances}=await import('../src/apple-analytics.ts');const inst=(d:string)=>({attributes:{processingDate:d}});const all=['2026-10-20','2026-10-21','2026-10-22','2026-10-23','2026-10-24'].map(inst);
+ assert.deepEqual(pickInstances(all,new Set(['2026-10-21','2026-10-24'])).map(i=>i.attributes.processingDate),['2026-10-24','2026-10-23','2026-10-22','2026-10-20']);
+ assert.equal(pickInstances(Array.from({length:40},(_,i)=>inst('2026-09-'+String(i).padStart(2,'0'))),new Set(),12).length,12);});

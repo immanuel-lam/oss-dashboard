@@ -1,0 +1,1 @@
+CREATE TABLE content_snapshots(source TEXT NOT NULL,content_id TEXT NOT NULL,observed_date TEXT NOT NULL,title TEXT NOT NULL,url TEXT NOT NULL,published_at TEXT,views REAL,likes REAL,comments REAL,shares REAL,PRIMARY KEY(source,content_id,observed_date));

@@ -1,0 +1,11 @@
+node_modules
+.wrangler
+.deploy
+public/app
+data
+.dev.vars
+.env
+.env.*
+wrangler.production.json
+.git
+!.env.example

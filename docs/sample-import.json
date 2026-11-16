@@ -1,0 +1,1262 @@
+[
+{
+"source": "website",
+"date": "2026-10-19",
+"metric": "page_views",
+"value": 461,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "website",
+"date": "2026-10-19",
+"metric": "visits",
+"value": 269,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "youtube",
+"date": "2026-10-19",
+"metric": "views",
+"value": 1001,
+"unit": "count",
+"timezone": "America/Los_Angeles",
+"provenance": "Sample data"
+},
+{
+"source": "google-play",
+"date": "2026-10-19",
+"metric": "installs",
+"value": 28,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "tiktok",
+"date": "2026-10-19",
+"metric": "followers_snapshot",
+"value": 1200,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data: account total observed that day"
+},
+{
+"source": "website",
+"date": "2026-10-20",
+"metric": "page_views",
+"value": 460,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "website",
+"date": "2026-10-20",
+"metric": "visits",
+"value": 285,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "youtube",
+"date": "2026-10-20",
+"metric": "views",
+"value": 1123,
+"unit": "count",
+"timezone": "America/Los_Angeles",
+"provenance": "Sample data"
+},
+{
+"source": "google-play",
+"date": "2026-10-20",
+"metric": "installs",
+"value": 11,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "tiktok",
+"date": "2026-10-20",
+"metric": "followers_snapshot",
+"value": 1209,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data: account total observed that day"
+},
+{
+"source": "website",
+"date": "2026-10-21",
+"metric": "page_views",
+"value": 531,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "website",
+"date": "2026-10-21",
+"metric": "visits",
+"value": 337,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "youtube",
+"date": "2026-10-21",
+"metric": "views",
+"value": 1077,
+"unit": "count",
+"timezone": "America/Los_Angeles",
+"provenance": "Sample data"
+},
+{
+"source": "google-play",
+"date": "2026-10-21",
+"metric": "installs",
+"value": 24,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "tiktok",
+"date": "2026-10-21",
+"metric": "followers_snapshot",
+"value": 1218,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data: account total observed that day"
+},
+{
+"source": "website",
+"date": "2026-10-22",
+"metric": "page_views",
+"value": 535,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "website",
+"date": "2026-10-22",
+"metric": "visits",
+"value": 317,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "youtube",
+"date": "2026-10-22",
+"metric": "views",
+"value": 1147,
+"unit": "count",
+"timezone": "America/Los_Angeles",
+"provenance": "Sample data"
+},
+{
+"source": "google-play",
+"date": "2026-10-22",
+"metric": "installs",
+"value": 21,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "tiktok",
+"date": "2026-10-22",
+"metric": "followers_snapshot",
+"value": 1227,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data: account total observed that day"
+},
+{
+"source": "website",
+"date": "2026-10-23",
+"metric": "page_views",
+"value": 575,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "website",
+"date": "2026-10-23",
+"metric": "visits",
+"value": 327,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "youtube",
+"date": "2026-10-23",
+"metric": "views",
+"value": 1228,
+"unit": "count",
+"timezone": "America/Los_Angeles",
+"provenance": "Sample data"
+},
+{
+"source": "google-play",
+"date": "2026-10-23",
+"metric": "installs",
+"value": 10,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "tiktok",
+"date": "2026-10-23",
+"metric": "followers_snapshot",
+"value": 1236,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data: account total observed that day"
+},
+{
+"source": "website",
+"date": "2026-10-24",
+"metric": "page_views",
+"value": 595,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "website",
+"date": "2026-10-24",
+"metric": "visits",
+"value": 352,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "youtube",
+"date": "2026-10-24",
+"metric": "views",
+"value": 1199,
+"unit": "count",
+"timezone": "America/Los_Angeles",
+"provenance": "Sample data"
+},
+{
+"source": "google-play",
+"date": "2026-10-24",
+"metric": "installs",
+"value": 26,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "tiktok",
+"date": "2026-10-24",
+"metric": "followers_snapshot",
+"value": 1245,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data: account total observed that day"
+},
+{
+"source": "website",
+"date": "2026-10-25",
+"metric": "page_views",
+"value": 530,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "website",
+"date": "2026-10-25",
+"metric": "visits",
+"value": 333,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "youtube",
+"date": "2026-10-25",
+"metric": "views",
+"value": 1326,
+"unit": "count",
+"timezone": "America/Los_Angeles",
+"provenance": "Sample data"
+},
+{
+"source": "google-play",
+"date": "2026-10-25",
+"metric": "installs",
+"value": 9,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "tiktok",
+"date": "2026-10-25",
+"metric": "followers_snapshot",
+"value": 1254,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data: account total observed that day"
+},
+{
+"source": "website",
+"date": "2026-10-26",
+"metric": "page_views",
+"value": 569,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "website",
+"date": "2026-10-26",
+"metric": "visits",
+"value": 344,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "youtube",
+"date": "2026-10-26",
+"metric": "views",
+"value": 1248,
+"unit": "count",
+"timezone": "America/Los_Angeles",
+"provenance": "Sample data"
+},
+{
+"source": "google-play",
+"date": "2026-10-26",
+"metric": "installs",
+"value": 9,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "tiktok",
+"date": "2026-10-26",
+"metric": "followers_snapshot",
+"value": 1263,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data: account total observed that day"
+},
+{
+"source": "website",
+"date": "2026-10-27",
+"metric": "page_views",
+"value": 496,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "website",
+"date": "2026-10-27",
+"metric": "visits",
+"value": 292,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "youtube",
+"date": "2026-10-27",
+"metric": "views",
+"value": 1241,
+"unit": "count",
+"timezone": "America/Los_Angeles",
+"provenance": "Sample data"
+},
+{
+"source": "google-play",
+"date": "2026-10-27",
+"metric": "installs",
+"value": 12,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "tiktok",
+"date": "2026-10-27",
+"metric": "followers_snapshot",
+"value": 1272,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data: account total observed that day"
+},
+{
+"source": "website",
+"date": "2026-10-28",
+"metric": "page_views",
+"value": 472,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "website",
+"date": "2026-10-28",
+"metric": "visits",
+"value": 295,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "youtube",
+"date": "2026-10-28",
+"metric": "views",
+"value": 1076,
+"unit": "count",
+"timezone": "America/Los_Angeles",
+"provenance": "Sample data"
+},
+{
+"source": "google-play",
+"date": "2026-10-28",
+"metric": "installs",
+"value": 25,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "tiktok",
+"date": "2026-10-28",
+"metric": "followers_snapshot",
+"value": 1281,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data: account total observed that day"
+},
+{
+"source": "website",
+"date": "2026-10-29",
+"metric": "page_views",
+"value": 415,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "website",
+"date": "2026-10-29",
+"metric": "visits",
+"value": 284,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "youtube",
+"date": "2026-10-29",
+"metric": "views",
+"value": 1055,
+"unit": "count",
+"timezone": "America/Los_Angeles",
+"provenance": "Sample data"
+},
+{
+"source": "google-play",
+"date": "2026-10-29",
+"metric": "installs",
+"value": 25,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "tiktok",
+"date": "2026-10-29",
+"metric": "followers_snapshot",
+"value": 1290,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data: account total observed that day"
+},
+{
+"source": "website",
+"date": "2026-10-30",
+"metric": "page_views",
+"value": 390,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "website",
+"date": "2026-10-30",
+"metric": "visits",
+"value": 233,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "youtube",
+"date": "2026-10-30",
+"metric": "views",
+"value": 1067,
+"unit": "count",
+"timezone": "America/Los_Angeles",
+"provenance": "Sample data"
+},
+{
+"source": "google-play",
+"date": "2026-10-30",
+"metric": "installs",
+"value": 26,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "tiktok",
+"date": "2026-10-30",
+"metric": "followers_snapshot",
+"value": 1299,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data: account total observed that day"
+},
+{
+"source": "website",
+"date": "2026-10-31",
+"metric": "page_views",
+"value": 365,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "website",
+"date": "2026-10-31",
+"metric": "visits",
+"value": 234,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "youtube",
+"date": "2026-10-31",
+"metric": "views",
+"value": 898,
+"unit": "count",
+"timezone": "America/Los_Angeles",
+"provenance": "Sample data"
+},
+{
+"source": "google-play",
+"date": "2026-10-31",
+"metric": "installs",
+"value": 25,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "tiktok",
+"date": "2026-10-31",
+"metric": "followers_snapshot",
+"value": 1308,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data: account total observed that day"
+},
+{
+"source": "website",
+"date": "2026-11-01",
+"metric": "page_views",
+"value": 330,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "website",
+"date": "2026-11-01",
+"metric": "visits",
+"value": 236,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "youtube",
+"date": "2026-11-01",
+"metric": "views",
+"value": 862,
+"unit": "count",
+"timezone": "America/Los_Angeles",
+"provenance": "Sample data"
+},
+{
+"source": "google-play",
+"date": "2026-11-01",
+"metric": "installs",
+"value": 27,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "tiktok",
+"date": "2026-11-01",
+"metric": "followers_snapshot",
+"value": 1317,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data: account total observed that day"
+},
+{
+"source": "website",
+"date": "2026-11-02",
+"metric": "page_views",
+"value": 341,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "website",
+"date": "2026-11-02",
+"metric": "visits",
+"value": 226,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "youtube",
+"date": "2026-11-02",
+"metric": "views",
+"value": 979,
+"unit": "count",
+"timezone": "America/Los_Angeles",
+"provenance": "Sample data"
+},
+{
+"source": "google-play",
+"date": "2026-11-02",
+"metric": "installs",
+"value": 21,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "tiktok",
+"date": "2026-11-02",
+"metric": "followers_snapshot",
+"value": 1326,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data: account total observed that day"
+},
+{
+"source": "website",
+"date": "2026-11-03",
+"metric": "page_views",
+"value": 359,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "website",
+"date": "2026-11-03",
+"metric": "visits",
+"value": 227,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "youtube",
+"date": "2026-11-03",
+"metric": "views",
+"value": 1013,
+"unit": "count",
+"timezone": "America/Los_Angeles",
+"provenance": "Sample data"
+},
+{
+"source": "google-play",
+"date": "2026-11-03",
+"metric": "installs",
+"value": 22,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "tiktok",
+"date": "2026-11-03",
+"metric": "followers_snapshot",
+"value": 1335,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data: account total observed that day"
+},
+{
+"source": "website",
+"date": "2026-11-04",
+"metric": "page_views",
+"value": 381,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "website",
+"date": "2026-11-04",
+"metric": "visits",
+"value": 226,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "youtube",
+"date": "2026-11-04",
+"metric": "views",
+"value": 972,
+"unit": "count",
+"timezone": "America/Los_Angeles",
+"provenance": "Sample data"
+},
+{
+"source": "google-play",
+"date": "2026-11-04",
+"metric": "installs",
+"value": 13,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "tiktok",
+"date": "2026-11-04",
+"metric": "followers_snapshot",
+"value": 1344,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data: account total observed that day"
+},
+{
+"source": "website",
+"date": "2026-11-05",
+"metric": "page_views",
+"value": 390,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "website",
+"date": "2026-11-05",
+"metric": "visits",
+"value": 227,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "youtube",
+"date": "2026-11-05",
+"metric": "views",
+"value": 1121,
+"unit": "count",
+"timezone": "America/Los_Angeles",
+"provenance": "Sample data"
+},
+{
+"source": "google-play",
+"date": "2026-11-05",
+"metric": "installs",
+"value": 17,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "tiktok",
+"date": "2026-11-05",
+"metric": "followers_snapshot",
+"value": 1353,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data: account total observed that day"
+},
+{
+"source": "website",
+"date": "2026-11-06",
+"metric": "page_views",
+"value": 458,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "website",
+"date": "2026-11-06",
+"metric": "visits",
+"value": 273,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "youtube",
+"date": "2026-11-06",
+"metric": "views",
+"value": 1140,
+"unit": "count",
+"timezone": "America/Los_Angeles",
+"provenance": "Sample data"
+},
+{
+"source": "google-play",
+"date": "2026-11-06",
+"metric": "installs",
+"value": 22,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "tiktok",
+"date": "2026-11-06",
+"metric": "followers_snapshot",
+"value": 1362,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data: account total observed that day"
+},
+{
+"source": "website",
+"date": "2026-11-07",
+"metric": "page_views",
+"value": 461,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "website",
+"date": "2026-11-07",
+"metric": "visits",
+"value": 301,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "youtube",
+"date": "2026-11-07",
+"metric": "views",
+"value": 1157,
+"unit": "count",
+"timezone": "America/Los_Angeles",
+"provenance": "Sample data"
+},
+{
+"source": "google-play",
+"date": "2026-11-07",
+"metric": "installs",
+"value": 11,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "tiktok",
+"date": "2026-11-07",
+"metric": "followers_snapshot",
+"value": 1371,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data: account total observed that day"
+},
+{
+"source": "website",
+"date": "2026-11-08",
+"metric": "page_views",
+"value": 524,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "website",
+"date": "2026-11-08",
+"metric": "visits",
+"value": 310,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "youtube",
+"date": "2026-11-08",
+"metric": "views",
+"value": 1266,
+"unit": "count",
+"timezone": "America/Los_Angeles",
+"provenance": "Sample data"
+},
+{
+"source": "google-play",
+"date": "2026-11-08",
+"metric": "installs",
+"value": 18,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "tiktok",
+"date": "2026-11-08",
+"metric": "followers_snapshot",
+"value": 1380,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data: account total observed that day"
+},
+{
+"source": "website",
+"date": "2026-11-09",
+"metric": "page_views",
+"value": 508,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "website",
+"date": "2026-11-09",
+"metric": "visits",
+"value": 334,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "youtube",
+"date": "2026-11-09",
+"metric": "views",
+"value": 1407,
+"unit": "count",
+"timezone": "America/Los_Angeles",
+"provenance": "Sample data"
+},
+{
+"source": "google-play",
+"date": "2026-11-09",
+"metric": "installs",
+"value": 9,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "tiktok",
+"date": "2026-11-09",
+"metric": "followers_snapshot",
+"value": 1389,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data: account total observed that day"
+},
+{
+"source": "website",
+"date": "2026-11-10",
+"metric": "page_views",
+"value": 520,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "website",
+"date": "2026-11-10",
+"metric": "visits",
+"value": 351,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "youtube",
+"date": "2026-11-10",
+"metric": "views",
+"value": 1505,
+"unit": "count",
+"timezone": "America/Los_Angeles",
+"provenance": "Sample data"
+},
+{
+"source": "google-play",
+"date": "2026-11-10",
+"metric": "installs",
+"value": 18,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "tiktok",
+"date": "2026-11-10",
+"metric": "followers_snapshot",
+"value": 1398,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data: account total observed that day"
+},
+{
+"source": "website",
+"date": "2026-11-11",
+"metric": "page_views",
+"value": 566,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "website",
+"date": "2026-11-11",
+"metric": "visits",
+"value": 346,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "youtube",
+"date": "2026-11-11",
+"metric": "views",
+"value": 1524,
+"unit": "count",
+"timezone": "America/Los_Angeles",
+"provenance": "Sample data"
+},
+{
+"source": "google-play",
+"date": "2026-11-11",
+"metric": "installs",
+"value": 26,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "tiktok",
+"date": "2026-11-11",
+"metric": "followers_snapshot",
+"value": 1407,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data: account total observed that day"
+},
+{
+"source": "website",
+"date": "2026-11-12",
+"metric": "page_views",
+"value": 582,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "website",
+"date": "2026-11-12",
+"metric": "visits",
+"value": 328,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "youtube",
+"date": "2026-11-12",
+"metric": "views",
+"value": 1434,
+"unit": "count",
+"timezone": "America/Los_Angeles",
+"provenance": "Sample data"
+},
+{
+"source": "google-play",
+"date": "2026-11-12",
+"metric": "installs",
+"value": 16,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "tiktok",
+"date": "2026-11-12",
+"metric": "followers_snapshot",
+"value": 1416,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data: account total observed that day"
+},
+{
+"source": "website",
+"date": "2026-11-13",
+"metric": "page_views",
+"value": 573,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "website",
+"date": "2026-11-13",
+"metric": "visits",
+"value": 322,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "youtube",
+"date": "2026-11-13",
+"metric": "views",
+"value": 1415,
+"unit": "count",
+"timezone": "America/Los_Angeles",
+"provenance": "Sample data"
+},
+{
+"source": "google-play",
+"date": "2026-11-13",
+"metric": "installs",
+"value": 30,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "tiktok",
+"date": "2026-11-13",
+"metric": "followers_snapshot",
+"value": 1425,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data: account total observed that day"
+},
+{
+"source": "website",
+"date": "2026-11-14",
+"metric": "page_views",
+"value": 531,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "website",
+"date": "2026-11-14",
+"metric": "visits",
+"value": 341,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "youtube",
+"date": "2026-11-14",
+"metric": "views",
+"value": 1481,
+"unit": "count",
+"timezone": "America/Los_Angeles",
+"provenance": "Sample data"
+},
+{
+"source": "google-play",
+"date": "2026-11-14",
+"metric": "installs",
+"value": 17,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "tiktok",
+"date": "2026-11-14",
+"metric": "followers_snapshot",
+"value": 1434,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data: account total observed that day"
+},
+{
+"source": "website",
+"date": "2026-11-15",
+"metric": "page_views",
+"value": 512,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "website",
+"date": "2026-11-15",
+"metric": "visits",
+"value": 309,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "youtube",
+"date": "2026-11-15",
+"metric": "views",
+"value": 1322,
+"unit": "count",
+"timezone": "America/Los_Angeles",
+"provenance": "Sample data"
+},
+{
+"source": "google-play",
+"date": "2026-11-15",
+"metric": "installs",
+"value": 22,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data"
+},
+{
+"source": "tiktok",
+"date": "2026-11-15",
+"metric": "followers_snapshot",
+"value": 1443,
+"unit": "count",
+"timezone": "UTC",
+"provenance": "Sample data: account total observed that day"
+}
+]
