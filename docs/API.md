@@ -53,7 +53,8 @@ Field rules a client must respect:
 ## Writing
 
 Every `POST` must send `Content-Type: application/json` **and** an `Origin` header equal to the dashboard's own
-origin (for example `Origin: https://dash.example.com`). Browsers do this automatically; other clients must set it.
+origin (for example `Origin: https://dash.example.com`), or `PUBLIC_URL` when that is set. Browsers do this
+automatically; other clients must set it.
 Anything else gets `403`.
 
 | Endpoint | Body | Result |

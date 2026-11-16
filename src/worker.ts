@@ -18,9 +18,16 @@ import {syncYouTube,syncYouTubeVideosHourly,type ConnectorEnv} from './connector
 export const CRONS=['*/15 * * * *','30 5 * * *'] as const;
 export const SLOTS:Record<number,string>={0:'charts-website',15:'instagram',30:'facebook-youtube',45:'apple-sales'};
 export function slotFor(cron:string,scheduledTime:number){if(cron==='30 5 * * *')return 'daily';if(cron!=='*/15 * * * *')return undefined;const m=new Date(scheduledTime).getUTCMinutes();return SLOTS[m-m%15];}
-interface Env extends ConnectorEnv,AppleEnv,ChartEnv,OAuthEnv,WebsiteEnv,InstagramEnv,FacebookPageEnv,GithubEnv { ASSETS:Fetcher; DASHBOARD_NAME?:string; PROFILE_URLS?:string }
+interface Env extends ConnectorEnv,AppleEnv,ChartEnv,OAuthEnv,WebsiteEnv,InstagramEnv,FacebookPageEnv,GithubEnv { ASSETS:Fetcher; DASHBOARD_NAME?:string; PROFILE_URLS?:string; PUBLIC_URL?:string }
 // The cache key only has to be a stable URL; it never leaves this Worker.
 const cacheKey=(origin:string)=>origin+'/__cache/metrics-v1';
+/** The dashboard's public origin. Behind a TLS-terminating proxy or tunnel the Worker sees http://, so PUBLIC_URL
+    (for example https://dash.example.com) sets the origin used for the POST check and OAuth redirect URIs. */
+export function publicOrigin(env:{PUBLIC_URL?:string},url:URL){
+ if(!env.PUBLIC_URL)return url.origin;
+ const u=new URL(env.PUBLIC_URL);if(u.protocol!=='https:'&&u.protocol!=='http:')throw Error('PUBLIC_URL must be an http(s) URL.');
+ return u.origin;
+}
 // Short-lived cookie that ties an OAuth callback to the browser that started it (there are no user accounts).
 const OAUTH_COOKIE='oauth_binding';
 const cookie=(request:Request,name:string)=>(request.headers.get('Cookie')??'').split(';').map(s=>s.trim()).find(s=>s.startsWith(name+'='))?.slice(name.length+1);
@@ -54,18 +61,18 @@ export default {
   const headers = { 'Cache-Control': 'no-store', 'Strict-Transport-Security':'max-age=31536000', 'Permissions-Policy':'camera=(), microphone=(), geolocation=()', 'X-Content-Type-Options': 'nosniff', 'Referrer-Policy': 'no-referrer', 'Content-Security-Policy': "default-src 'none'; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; font-src 'self'; img-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'" };
   // There is no built-in sign-in. Put the dashboard behind Cloudflare Access, a VPN or an authenticating
   // reverse proxy before you deploy it anywhere reachable (see README.md).
-  const url=new URL(request.url);const path=url.pathname;
+  const url=new URL(request.url);const path=url.pathname;const origin=publicOrigin(env,url);
   const METRICS_CACHE_KEY=cacheKey(url.origin);
   const respond=(body:unknown,status=200,extra:Record<string,string>={})=>new Response(JSON.stringify(body),{status,headers:{...headers,'Content-Type':'application/json',...extra}});
   const oauthMatch=/^\/oauth\/(youtube|instagram|tiktok|facebook)\/callback$/.exec(path);
   if(oauthMatch&&request.method==='GET'){
    const clear=OAUTH_COOKIE+'=; Path=/oauth/; Max-Age=0; HttpOnly; Secure; SameSite=Lax';
-   try{await callback(env,oauthMatch[1] as Provider,url,cookie(request,OAUTH_COOKIE)??'');return new Response(null,{status:303,headers:{...headers,Location:'/','Set-Cookie':clear}});}
+   try{await callback(env,oauthMatch[1] as Provider,new URL(path+url.search,origin),cookie(request,OAUTH_COOKIE)??'');return new Response(null,{status:303,headers:{...headers,Location:'/','Set-Cookie':clear}});}
    catch(error){return new Response(error instanceof OAuthFailure?error.message:'Connection could not be saved. Return to Connections and retry.',{status:400,headers:{...headers,'Set-Cookie':clear}});}
   }
   if(request.method==='POST'&&path.startsWith('/api/'))ctx?.waitUntil((caches as unknown as {default:Cache}).default.delete(METRICS_CACHE_KEY));
   if(request.method!=='GET') {
-   if(request.method!=='POST' || request.headers.get('Origin')!==new URL(request.url).origin || request.headers.get('Content-Type')!=='application/json') return respond({error:'Invalid request origin or content type.'},403);
+   if(request.method!=='POST' || request.headers.get('Origin')!==origin || request.headers.get('Content-Type')!=='application/json') return respond({error:'Invalid request origin or content type.'},403);
   }
   if(request.method==='GET' && /^\/fonts\/(manrope|hanken)\.woff2$/.test(path))return env.ASSETS.fetch(request);
   // The React UI is a static build in public/app.
@@ -75,7 +82,7 @@ export default {
    if(!env.DB) return respond({error:'Database is not configured.'},503);
    try {
     const connect=/^\/api\/(connect|disconnect)\/(youtube|instagram|tiktok|facebook)$/.exec(path);
-    if(connect&&request.method==='POST'){const p=connect[2] as Provider;if(connect[1]==='connect'){const binding=crypto.randomUUID();return respond(await begin(env,p,url.origin,binding),200,{'Set-Cookie':OAUTH_COOKIE+'='+binding+'; Path=/oauth/; Max-Age=600; HttpOnly; Secure; SameSite=Lax'});}await env.DB.prepare('DELETE FROM connections WHERE provider=?').bind(p).run();return respond({disconnected:true});}
+    if(connect&&request.method==='POST'){const p=connect[2] as Provider;if(connect[1]==='connect'){const binding=crypto.randomUUID();return respond(await begin(env,p,origin,binding),200,{'Set-Cookie':OAUTH_COOKIE+'='+binding+'; Path=/oauth/; Max-Age=600; HttpOnly; Secure; SameSite=Lax'});}await env.DB.prepare('DELETE FROM connections WHERE provider=?').bind(p).run();return respond({disconnected:true});}
     if(path==='/api/metrics' && request.method==='GET') {
      // Workers Free allows 5 million D1 rows read per day. Every open dashboard polls this endpoint, so the stored
      // report is cached for two minutes (per Cloudflare location) and rebuilt only on a miss or after a write.

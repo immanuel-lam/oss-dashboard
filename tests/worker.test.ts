@@ -57,3 +57,11 @@ test('GitHub history cannot displace audience rows at the report limit',async()=
   assert.equal(db.prepare(REPORT_QUERIES[1]).all().length,5001);
  }finally{db.close();}
 });
+
+test('PUBLIC_URL sets the origin for write checks and OAuth redirects behind a TLS proxy',async()=>{
+ const env={ASSETS:assets,PUBLIC_URL:'https://dash.example.com/',TOKEN_ENCRYPTION_KEY:btoa('a'.repeat(32)),YOUTUBE_CLIENT_ID:'id',YOUTUBE_CLIENT_SECRET:'secret',DB:{prepare:()=>({bind:()=>({run:async()=>({})})})}} as any;
+ const post=(origin:string)=>worker.fetch(new Request('http://127.0.0.1:8787/api/connect/youtube',{method:'POST',headers:{Origin:origin,'Content-Type':'application/json'},body:'{}'}),env);
+ assert.equal((await post('http://127.0.0.1:8787')).status,403);
+ const r=await post('https://dash.example.com');assert.equal(r.status,200);
+ assert.equal(new URL(((await r.json()) as {url:string}).url).searchParams.get('redirect_uri'),'https://dash.example.com/oauth/youtube/callback');
+});

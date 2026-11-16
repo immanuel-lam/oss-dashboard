@@ -44,6 +44,9 @@ Environment: `HOST` (default `127.0.0.1`, Docker uses `0.0.0.0` inside the conta
 `/__scheduled` is reachable on the same port, so anyone who can reach the dashboard can start a sync. The
 protection you put in front of the dashboard covers it as well.
 
+Behind any proxy or tunnel that ends HTTPS, set `PUBLIC_URL=https://<your host>`. The Worker then sees plain
+`http://` requests, and without this setting OAuth redirect URIs would use `http://`.
+
 To give a self-hosted box HTTPS and Access without opening ports, run a Cloudflare Tunnel
 (`cloudflared tunnel --url http://localhost:8787`, or a named tunnel with a hostname) and add an Access application
 for that hostname.

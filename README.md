@@ -4,6 +4,8 @@ A self-hosted analytics dashboard for a small creator or product team. It collec
 places you publish (website, YouTube, TikTok, Instagram, Facebook, App Store, GitHub) into one SQLite database and
 shows them as trend tiles, charts, a per-post content view and a CSV-exportable ledger.
 
+![Dashboard overview with sample data](docs/screenshot.png)
+
 It runs as a single Cloudflare Worker with D1, either on Cloudflare or on your own machine through `workerd`
 (the open-source Workers runtime). No external services are needed beyond the ones you choose to connect.
 
@@ -66,7 +68,8 @@ The setup script creates the D1 database, writes the git-ignored `wrangler.produ
 deploys, and generates `TOKEN_ENCRYPTION_KEY` if it does not exist. It is safe to re-run. Later releases:
 `npm run deploy` (runs the full test suite first).
 
-Once this repository is public you can also use the button below. It forks the repo, provisions D1 and deploys.
+Once this repository is public, the button below should also work. Cloudflare's deploy button is meant to fork the repo,
+provision D1 and deploy. This path has not been tested yet.
 Add `TOKEN_ENCRYPTION_KEY` (from `openssl rand -base64 32`) as a secret afterwards, then apply migrations with
 `npm run db:production` or the D1 console.
 
@@ -85,7 +88,7 @@ Pick one. All of them take a few minutes.
 - **Private network.** Keep the default `127.0.0.1` binding and reach it over Tailscale or WireGuard.
 - **Reverse proxy with auth.** Caddy `basic_auth`, oauth2-proxy, Authelia or Authentik in front of port 8787.
 
-OAuth callbacks need HTTPS on a stable host name, so connected social accounts work best on Cloudflare or behind a
+Behind a proxy or tunnel, set `PUBLIC_URL` to the public `https://` address. OAuth callbacks need HTTPS on a stable host name, so connected social accounts work best on Cloudflare or behind a
 proxy with a real certificate. Imports, website analytics, GitHub and Apple work fine on plain localhost.
 
 ## What it collects
